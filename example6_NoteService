@@ -1,24 +1,24 @@
 public class example6_NoteService {
 	
-	    public static Node createTail(int num) {
-	        Node head = null;
+	    public static example6_Node createTail(int num) {
+	    	example6_Node head = null;
 	        for (int i = num; i >= 0; i--) {
-	            head = new Node(i, head);
+	            head = new example6_Node(i, head);
 	        }
 	        return head;
 	    }
 
-	    public static Node createHead(int num) {
-	        Node node = new Node(0, null);
-	        Node head = node;
+	    public static example6_Node createHead(int num) {
+	    	example6_Node node = new example6_Node(0, null);
+	    	example6_Node head = node;
 	        for (int i = 0; i < num - 1; i++) {
-	            node.setNext(new Node(i + 1, null));
+	            node.setNext(new example6_Node(i + 1, null));
 	            node = node.getNext();
 	        }
 	        return head;
 	    }
 
-	    public static String toString(Node head) {
+	    public static String toString(example6_Node head) {
 	        String string = "";
 	        while (head != null) {
 	            string +=  head.getValue()+ " ";
@@ -27,21 +27,21 @@ public class example6_NoteService {
 	        return string;
 	    }
 
-	    public static Node addFirst(Node head) {
-	        return new Node(head.getValue() - 1, head);
+	    public static example6_Node addFirst(example6_Node head) {
+	        return new example6_Node(head.getValue() - 1, head);
 	    }
 
-	    public static void addLast(Node node) {
+	    public static void addLast(example6_Node node) {
 	        while (node.getNext() != null) {
 	            node = node.getNext();
 	        }
-	        node.setNext(new Node(node.getValue() + 1, null));
+	        node.setNext(new example6_Node(node.getValue() + 1, null));
 	    }
 
-	    public static Node insert(int index, Node node, Node head) {
+	    public static example6_Node insert(int index, example6_Node node, example6_Node head) {
 	        int indexMethod = 0;
-	        Node buffer = head;
-	        Node headReturn = head;
+	        example6_Node buffer = head;
+	        example6_Node headReturn = head;
 	        while (true) {
 	            if (index == indexMethod && indexMethod != 0) {
 	                node.setNext(head);
@@ -60,11 +60,11 @@ public class example6_NoteService {
 	        return headReturn;
 	    }
 
-	    public static Node removeFirst(Node node) {
+	    public static example6_Node removeFirst(example6_Node node) {
 	        return node.getNext();
 	    }
 
-	    public static void removeLast(Node node) {
+	    public static void removeLast(example6_Node node) {
 	        while (node.getNext() != null) {
 	            node = node.getNext();
 	            if (node.getNext().getNext() == null) {
@@ -73,10 +73,10 @@ public class example6_NoteService {
 	        }
 	    }
 
-	    public static Node remove(int index, Node node) {
+	    public static example6_Node remove(int index, Node node) {
 	        int indexMethod = 0;
-	        Node returnNode = node;
-	        Node buffer = node;
+	        example6_Node returnNode = node;
+	        example6_Node buffer = node;
 	        while (true) {
 	            if (index == indexMethod && indexMethod != 0) {
 	                buffer.setNext(node.getNext());
@@ -93,15 +93,15 @@ public class example6_NoteService {
 	        return returnNode;
 	    }
 
-	    public static Node createHeadRec(int num) {
+	    public static example6_Node createHeadRec(int num) {
 	        if (num == 0) {
 	            return null;
 	        }
-	        return new Node(num - 1, createHeadRec(num - 1));
+	        return new example6_Node(num - 1, createHeadRec(num - 1));
 	    }
 
-	    public static Node createTailRec(int num, Node node) {
-	        Node node1 = new Node(num - 1, node);
+	    public static example6_Node createTailRec(int num, example6_Node node) {
+	    	example6_Node node1 = new example6_Node(num - 1, node);
 	        if (num == 0) {
 	            return node;
 	        }
@@ -115,4 +115,3 @@ public class example6_NoteService {
 	        return head.getValue() + " " + toStringRec(head.getNext());
 	    }
 	}
-}
