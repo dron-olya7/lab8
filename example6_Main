@@ -1,0 +1,30 @@
+public class example6_Main {
+	  
+		public static void main(String[] args) {
+			example6_Node node = example6_NoteService.createHead(5);
+	        System.out.println(example6_NoteService.toString(node));
+	        node = example6_NoteService.insert(2, new example6_Node(666, null), node);
+	        System.out.println(example6_NoteService.toString(node));
+	        node = example6_NoteService.addFirst(node);
+	        System.out.println(example6_NoteService.toString(node));
+	        node = example6_NoteService.removeFirst(node);
+	        System.out.println(example6_NoteService.toString(node));
+	        example6_NoteService.addLast(node);
+	        System.out.println("-----------------");
+
+	        example6_Node node2 = example6_NoteService.createHead(4);
+	        System.out.println(example6_NoteService.toString(node2));
+	        example6_NoteService.removeLast(node2);
+	        System.out.println(example6_NoteService.toString(node2));
+	        node2 = example6_NoteService.remove(2, node2);
+	        System.out.println(example6_NoteService.toString(node2));
+
+	        System.out.println("-----------------");
+	        example6_Node nodeRec = example6_NoteService.createHeadRec(4);
+	        System.out.println(example6_NoteService.toStringRec(nodeRec));
+
+	        System.out.println("-----------------");
+	        example6_Node nodeRec1 = example6_NoteService.createTailRec(4, null);
+	        System.out.println(example6_NoteService.toStringRec(nodeRec1));
+}
+	}
